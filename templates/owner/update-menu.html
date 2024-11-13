@@ -1,0 +1,14 @@
+{% extends 'owner/index.html' %}
+
+{% block content %}
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}  <!-- Esto renderiza automáticamente los campos del formulario -->
+    <div class="modal-footer">
+        <a class="btnCancel" href="{% url 'owner_app:panel-menu' %}">Cancelar</a>
+        <button type="submit" class="btn btn-primary">Guardar cambios</button>
+    </div>
+</form>
+
+{% endblock %}

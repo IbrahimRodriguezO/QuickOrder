@@ -1,16 +1,27 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="icon" href="{% static 'img/quickordericon.png' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <title>Login</title>
 </head>
 <body>
-    <h1>Acceder al sistema</h1>
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Acceder</button>
-    </form>
+    <div class="main-container">
+        <form method="POST" class="credentials-container">
+            {% csrf_token %}
+            <h2>QUICKORDER</h2>
+            <div class="input-form">
+                <label>{{ form.username.label }}</label><br>
+                {{form.username}}
+            </div>
+            <div class="input-form">
+                <label>{{ form.password.label }}</label><br>
+                {{form.password}}
+            </div>
+            <button class="btnLogin" type="submit">LOGIN</button>
+        </form>
 </body>
 </html>

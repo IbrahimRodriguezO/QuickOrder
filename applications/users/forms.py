@@ -42,13 +42,10 @@ class UserRegisterForm(forms.ModelForm):
 
 class LoginForm(forms.Form):
     username = forms.CharField(
-        label="username",
+        label="Usuario",
         required=True,
         widget=forms.TextInput(
-            attrs={
-                "placeholder": "username",
-                "style": "{ margin: 10px }"
-            }
+            attrs={'class': 'input'}
         )
     )
     password = forms.CharField(
@@ -56,7 +53,7 @@ class LoginForm(forms.Form):
         required=True,
         widget=forms.PasswordInput(
             attrs={
-                "placeholder": "Contraseña"
+                'class': 'input'
             }
         )
     )

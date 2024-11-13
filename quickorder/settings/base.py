@@ -33,6 +33,7 @@ LOCAL_APPS = (
     'applications.users',
     'applications.waiter',
     'applications.chef',
+    'applications.owner',
 )
 
 THIRD_PARTY_APPS = ()

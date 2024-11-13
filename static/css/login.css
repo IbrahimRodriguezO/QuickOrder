@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Merriweather Sans", sans-serif;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.952);
+}
+
+.main-container{
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, #000000, #d13b04);
+}
+
+h2{
+  margin: 20px 0;
+  text-align: center;
+  width: 100%;
+}
+
+.credentials-container{
+  width: 500px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  border: 2px solid rgb(95, 25, 0);
+  background-color: #bd3301;
+  font-size: 20px;
+  padding: 50px;
+  position: relative;
+  box-shadow: 0 0 5px 1px rgb(0, 0, 0);
+}
+
+.credentials-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../img/quickordericon.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 120%;
+  opacity: 0.2;
+  z-index: 0;
+  border-radius: 25px;
+}
+
+.credentials-container * {
+  position: relative;
+  z-index: 1;
+}
+
+.input-form{
+  width: 100%;
+}
+
+.input,
+.btnLogin{
+  border-radius: 10px;
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  border: none;
+  margin: 10px 0;
+}
+
+.input{
+  color: rgb(40, 40, 40);
+  background-color: rgba(255, 255, 255, 0.459);
+  outline: none;
+}
+
+.btnLogin{
+  margin-top: 30px;
+  padding: 10px 0;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: rgb(95, 25, 0);
+  transition: background-color 0.3s ease;
+}
+
+.btnLogin:hover {
+  background-color: rgb(54, 16, 2);
+}
+
+.btnLogin:active{
+  background-color: rgba(255, 255, 255, 0.205);
+}
+
+@media (max-width: 480px) {
+  .credentials-container{
+    width: 300px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  /* Estilos para dispositivos móviles */
+}
