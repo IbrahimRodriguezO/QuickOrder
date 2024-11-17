@@ -8,9 +8,8 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="{% url 'waiter_app:platillos-menu' 1%}">Mesa 1</a>
-    <a href="{% url 'waiter_app:platillos-menu' 2%}">Mesa 2</a>
-    <a href="{% url 'waiter_app:platillos-menu' 3%}">Mesa 3</a>
-    <a href="{% url 'waiter_app:platillos-menu' 4%}">Mesa 4</a>
+    {% for mesa in mesas %}
+        <a href="{% url 'waiter_app:platillos-menu' mesa%}">Mesa {{ mesa }}</a>
+    {% endfor %}
 </body>
 </html>
