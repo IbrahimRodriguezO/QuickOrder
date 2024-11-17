@@ -10,6 +10,6 @@ class WaiterPage(LoginRequiredMixin, TemplateView):
     template_name = "waiter/mesas.html"
     login_url = reverse_lazy("users_app:user-login")
 
-def ListaMenu(request):
+def ListaMenu(request, mesa):
     platillos = Menu.objects.all()
-    return render(request, "waiter/index.html", {"platillos": platillos})
+    return render(request, "waiter/index.html", {"platillos": platillos, "mesa": mesa})

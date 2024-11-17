@@ -19,6 +19,8 @@
     <div class="container">
         <div class="main-container">
           <h2>Crear orden</h2>
+          <br><br>
+          <h2>Mesa: {{ mesa }}</h2>
           <div class="order">
             <div class="order-img">
               <img src="{% static 'img/platillos.png' %}" alt="Platillos" width="100px">
@@ -50,8 +52,13 @@
               </ul>
             </div>
           </div>
-          <textarea id="orderTextarea"></textarea>
-          <button>Confirmar</button>
+          <form method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="mesa" id="mesa" value="{{ mesa }}">
+            <textarea id="orderTextarea"></textarea>
+            <button type="submit">Confirmar</button>
+          </form>
+          
         </div>
       </div>
 

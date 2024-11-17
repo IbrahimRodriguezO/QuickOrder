@@ -5,5 +5,5 @@ app_name = "waiter_app"
 
 urlpatterns = [
     path('pedidos/', views.WaiterPage.as_view(), name="panel-waiter"),
-    path('platillos/', views.ListaMenu, name="platillos-menu")
+    path('platillos/<int:mesa>', views.ListaMenu, name="platillos-menu")
 ]
