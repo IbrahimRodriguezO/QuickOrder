@@ -26,12 +26,11 @@
             </div>
             <div class="menu">
               <ul>
-                <li>Lasagna</li>
-                <li>Pasta</li>
-                <li>Ensalada Cesar</li>
-                <li>Pizza Pepperoni</li>
-                <li>Pizza Hawaiana</li>
-                <li>Pizza Carnes Frias</li>
+                {% for platillo in platillos %}
+                  {% if platillo.tipo == 'Platillo' %}
+                    <li onclick="addToTextarea('{{ platillo.nombre }}')">{{ platillo.nombre }}</li>
+                  {% endif %}
+                {% endfor %}
               </ul>
             </div>
           </div>
@@ -43,19 +42,24 @@
             </div>
             <div class="menu">
               <ul>
-                <li>Vino Blanco</li>
-                <li>Vino Tinto</li>
-                <li>Coca-Cola</li>
-                <li>Manzana</li>
-                <li>Fanta</li>
-                <li>Agua Mineral</li>
+                {% for platillo in platillos %}
+                  {% if platillo.tipo == 'Bebida' %}
+                    <li onclick="addToTextarea('{{ platillo.nombre }}')">{{ platillo.nombre }}</li>
+                  {% endif %}
+                {% endfor %}
               </ul>
             </div>
           </div>
-          <textarea name="" id=""></textarea>
+          <textarea id="orderTextarea"></textarea>
           <button>Confirmar</button>
         </div>
       </div>
 
+      <script>
+        function addToTextarea(item) {
+            const textarea = document.getElementById('orderTextarea');
+            textarea.value += item + '\n';
+        }
+    </script>
 </body>
 </html>
