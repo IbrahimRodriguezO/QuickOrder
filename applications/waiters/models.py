@@ -11,6 +11,7 @@ class Orden(models.Model):
 
     mesa = models.CharField("Mesa", max_length=1000)
     platillos = models.CharField("Platillos", max_length=1000)
+    completado = models.BooleanField(verbose_name= "Estatus",default=False)
     fecha_pedido = models.DateTimeField(verbose_name="Fecha pedido", auto_now_add=True)
 
     def __str__(self):
