@@ -12,7 +12,7 @@ class WaiterPage(LoginRequiredMixin, TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['mesas'] = range(1, 21)  
+        context['mesas'] = range(1, 13)  
         return context
 
 def ListaMenu(request, mesa):

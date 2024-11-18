@@ -7,12 +7,16 @@
 body{
   font-family: sans-serif;
   color: white;
-  background-color: #9e2a00;
+  background: linear-gradient(to bottom, #000000, #d13b04);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .container{
   height: 820px;
-  width: 100%;
+  width: 1200px;
 }
 
 .main-container{
@@ -91,4 +95,40 @@ button:active{
 form{
   display: flex;
   flex-direction: column;
+}
+
+.cards{
+  width: 100%;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.card{
+  background-color: #9e2a00;
+  width: 300px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  box-shadow: 0 0 5px #000;
+}
+
+.card a{
+  display: block;
+  text-decoration: none; 
+  color: #fff;
+}
+
+.card a p{
+  text-align: center;
+}
+
+.card img{
+  width: 100px;
+  height: 100px;
 }
