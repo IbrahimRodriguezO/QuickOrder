@@ -31,7 +31,7 @@ DJANGO_APPS = (
 
 LOCAL_APPS = (
     'applications.users',
-    'applications.waiter',
+    'applications.waiters',
     'applications.chef',
     'applications.owner',
 )

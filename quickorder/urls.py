@@ -22,6 +22,6 @@ urlpatterns = [
     path('', views.LoginUser.as_view(), name="inicio-sesion"),
     re_path('', include('applications.users.urls')),
     re_path('', include('applications.owner.urls')),
-    re_path('', include('applications.waiter.urls')),
+    re_path('', include('applications.waiters.urls')),
     re_path('', include('applications.chef.urls')),
 ]
