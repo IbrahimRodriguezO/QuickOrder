@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Chef-mesas</title>
 </head>
 <body>
     <h1>Panel de usuarios</h1>
     <h3>Bienvenido chef: {{ user }}</h3>
     <ul>
         <li><a href="{% url 'users_app:user-logout' %}">Cerrar sesion</a></li>
-        <li><a href="#">Actualizar datos</a></li>
     </ul>
 </body>
 </html>
