@@ -9,11 +9,12 @@
     <title>Mesero</title>
 </head>
 <body>
-    <h1>Panel de usuarios</h1>
-    <h3>Bienvenido mesero: {{ user }}</h3>
-    <ul>
-        <li><a href="{% url 'users_app:user-logout' %}">Cerrar sesion</a></li>
-    </ul>
+    <header>
+        <h3>Bienvenido mesero: {{ user }}</h3>
+        <ul>
+            <li><a href="{% url 'users_app:user-logout' %}">Cerrar sesion</a></li>
+        </ul>
+    </header>
 
     <div class="container">
         {% block content %}
