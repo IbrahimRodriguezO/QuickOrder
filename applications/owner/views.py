@@ -8,12 +8,18 @@ from django.views import View
 from django.views.generic import TemplateView, ListView, DeleteView, CreateView, UpdateView
 from .models import Menu
 from .forms import MenuForm
+from applications.users.models import User
 
 # Create your views here.
 
 class HomePage(LoginRequiredMixin, TemplateView):
     template_name = "owner/index.html"
     login_url = reverse_lazy("users_app:user-login")
+
+class ListUser(ListView):
+    template_name = "owner/usuarios.html"
+    model = User
+    context_object_name = "usuario"
 
 class ListMenu(ListView):
     template_name = "owner/menu.html"
