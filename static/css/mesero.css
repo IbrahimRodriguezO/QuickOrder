@@ -30,6 +30,24 @@ body{
   align-items: center;
 }
 
+header{
+  width: 1200px;
+  height: 60px;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+header h3{
+  margin-left: -70px;
+}
+
+header ul li a{
+  text-decoration: none;
+  color: #fff;
+}
+
 h2{
   width: 100%;
   text-align: center;

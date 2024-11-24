@@ -10,7 +10,8 @@
 </head>
 <body>
     <header>
-        <h3>Bienvenido mesero: {{ user }}</h3>
+        <h1>QuickOrder</h1>
+        <h3>Bienvenido: {{ user.name }}</h3>
         <ul>
             <li><a href="{% url 'users_app:user-logout' %}">Cerrar sesion</a></li>
         </ul>
