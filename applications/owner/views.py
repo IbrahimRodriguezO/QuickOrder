@@ -1,14 +1,17 @@
 from urllib import request
 from django.http import JsonResponse
 from django.shortcuts import render, redirect
+from django.http import HttpResponseRedirect
 from django.template.loader import render_to_string
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.urls import reverse_lazy
+from django.contrib.auth import authenticate, login, logout
+from django.urls import reverse_lazy, reverse
 from django.views import View
-from django.views.generic import TemplateView, ListView, DeleteView, CreateView, UpdateView
+from django.views.generic import TemplateView, ListView, DeleteView, CreateView, UpdateView, FormView
 from .models import Menu
 from .forms import MenuForm
 from applications.users.models import User
+from applications.users.forms import UserRegisterForm
 
 # Create your views here.
 
@@ -26,9 +29,26 @@ class ListMenu(ListView):
     model = Menu
     context_object_name = "menu"
     
-
 class UsersPage(TemplateView):
     template_name = "owner/usuarios.html"
+
+class UserCreateView(FormView):
+    template_name = "owner/crear-usuario.html"
+    form_class = UserRegisterForm
+    success_url = reverse_lazy("owner_app:lista-usuarios")
+
+    def form_valid(self, form): 
+        User.objects.create_user(
+            form.cleaned_data["username"],
+            form.cleaned_data["email"],
+            form.cleaned_data["password1"],
+            name = form.cleaned_data["name"],
+            last_name = form.cleaned_data["last_name"],
+            last_name_2 = form.cleaned_data["last_name_2"],
+            rol = form.cleaned_data["rol"],
+            phone_number = form.cleaned_data["phone_number"]
+        )
+        return super(UserCreateView, self).form_valid(form)
 
 class MenuDeleteView(DeleteView):
     model = Menu

@@ -9,5 +9,6 @@ urlpatterns = [
     path('panel_menu/<pk>/', views.MenuDeleteView.as_view(), name="eliminar-platillo"),
     path('agregar-platillo/', views.MenuCreateView.as_view(), name='agregar-platillo'),
     path('editar-platillo/<int:pk>/', views.MenuUpdateView.as_view(), name='editar-platillo'),
-    path('lista_usuarios/', views.ListUser.as_view(), name="lista-usuarios")
+    path('lista_usuarios/', views.ListUser.as_view(), name="lista-usuarios"),
+    path('crear_usuario/', views.UserCreateView.as_view(), name="crear-usuario"),
 ]
